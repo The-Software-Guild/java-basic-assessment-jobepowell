@@ -59,9 +59,36 @@ public class RockPaperScissors {
                 System.out.println("Would you like to pick:\n\t1.Rock\n\t2.Paper\n\t3.Scissors");
                 choice = scrn.nextInt();
             }while(choice < 1 || choice > 3);
-                    
+                   
             comChoice = rand.nextInt(3)+1;
-            //If the user chose Rock
+            compareChoices(choice,comChoice,result);
+            
+        }
+        
+        printResults(result);
+        
+    }
+    
+    //Prints the results of a game of Rock Paper Scissors
+    public static void printResults(int[] result)
+    {
+        System.out.println("Number of Ties: " + result[0]);
+        System.out.println("Number of User wins: " + result[1]);
+        System.out.println("Number of Computer wins: " + result[2]);
+        //Determines winner
+        if (result[1] > result[2]) {
+            System.out.println("User wins!");
+        } else if (result[1] < result[2]) {
+            System.out.println("Computer wins!");
+        } else {
+            System.out.println("It's a tie!");
+        }
+    }
+    
+    //Detemines who wins a round and increments in the result array
+    public static void compareChoices(int choice, int comChoice, int[] result)
+    {
+        //If the user chose Rock
             if (choice == 1) {
                 if (comChoice == 1) {
                     System.out.println("Tie!");
@@ -100,18 +127,5 @@ public class RockPaperScissors {
                     result[0]++;
                 }
             }
-        }
-        //Prints out results
-        System.out.println("Number of Ties: " + result[0]);
-        System.out.println("Number of User wins: " + result[1]);
-        System.out.println("Number of Computer wins: " + result[2]);
-        //Determines winner
-        if (result[1] > result[2]) {
-            System.out.println("User wins!");
-        } else if (result[1] < result[2]) {
-            System.out.println("Computer wins!");
-        } else {
-            System.out.println("It's a tie!");
-        }
     }
 }
