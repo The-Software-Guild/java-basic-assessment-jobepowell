@@ -19,7 +19,7 @@ public class RockPaperScissors {
         String ans;
         while (playAgain) { //Calls the game method, then checks if it should play again
             RPS();
-            while (true && playAgain) {
+            while (playAgain) {
                 System.out.println("Would you like to play again? Yes or No");
                 ans = scrn.nextLine();
                 if (ans.equals("")) { //Error checking for empty string
@@ -62,7 +62,6 @@ public class RockPaperScissors {
                    
             comChoice = rand.nextInt(3)+1;
             compareChoices(choice,comChoice,result);
-            
         }
         
         printResults(result);
