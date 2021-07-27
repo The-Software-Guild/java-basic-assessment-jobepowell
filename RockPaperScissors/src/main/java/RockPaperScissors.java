@@ -16,18 +16,18 @@ public class RockPaperScissors {
 
     public static void main(String[] args) {
         boolean playAgain = true;
-        String ans;
+        String answer;
         while (playAgain) { //Calls the game method, then checks if it should play again
             RPS();
             while (playAgain) {
                 System.out.println("Would you like to play again? Yes or No");
-                ans = scrn.nextLine();
-                if (ans.equals("")) { //Error checking for empty string
-                    ans = scrn.nextLine();
+                answer = scrn.nextLine();
+                if (answer.equals("")) { //Error checking for empty string
+                    answer = scrn.nextLine();
                 }
-                if (ans.toUpperCase().equals("NO")) {
+                if (answer.toUpperCase().equals("NO")) {
                     playAgain = false;
-                } else if (ans.toUpperCase().equals("YES")) {
+                } else if (answer.toUpperCase().equals("YES")) {
                     break;
                 } else {
                     System.out.println("Invalid input, enter Yes or No");
